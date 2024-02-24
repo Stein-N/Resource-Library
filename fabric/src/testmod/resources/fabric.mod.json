@@ -1,0 +1,28 @@
+{
+    "schemaVersion": 1,
+    "id": "testmod",
+    "version": "0.1",
+    "name": "Test Mod",
+    "description": "Testing only",
+    "authors": [
+        "xStopho"
+    ],
+    "contact": {
+        "homepage": "https://fabricmc.net/",
+        "sources": "https://github.com/FabricMC/fabric-example-mod"
+    },
+    "license": "MIT",
+    "icon": "icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "net.xstopho.testmod.TestMod"
+        ]
+    },
+    "depends": {
+        "fabric-api": "*",
+        "fabricloader": "*",
+        "minecraft": "*",
+        "java": ">=17"
+    }
+}
