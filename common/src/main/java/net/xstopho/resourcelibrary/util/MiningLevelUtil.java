@@ -35,6 +35,13 @@ public final class MiningLevelUtil {
         };
     }
 
+    // will be changed
+    public static boolean isCorrectToolForMining(ItemStack stack, int miningLevel) {
+        if (stack.getItem() instanceof DiggerItem item) {
+            return item.getTier().getLevel() >= miningLevel;
+        } else throw new IllegalArgumentException("The given Item isn't a Tool Item!");
+    }
+
     public static int getToolTier(Item item) {
         if (item instanceof DiggerItem) {
             return ((DiggerItem) item).getTier().getLevel();
@@ -42,9 +49,6 @@ public final class MiningLevelUtil {
     }
 
     public static int getToolTier(ItemStack stack) {
-        Item item = stack.getItem();
-        if (item instanceof DiggerItem) {
-            return ((DiggerItem) item).getTier().getLevel();
-        } else throw new IllegalArgumentException("The given Item isn't a Tool Item!");
+        return getToolTier(stack.getItem());
     }
 }
