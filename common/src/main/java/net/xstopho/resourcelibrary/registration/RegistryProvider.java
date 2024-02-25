@@ -2,7 +2,7 @@ package net.xstopho.resourcelibrary.registration;
 
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
-import net.xstopho.stophoslib.platform.Services;
+import net.xstopho.resourcelibrary.platform.Services;
 
 import java.util.Collection;
 import java.util.function.Supplier;
