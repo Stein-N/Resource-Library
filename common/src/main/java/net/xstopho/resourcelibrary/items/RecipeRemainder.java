@@ -12,17 +12,17 @@ public abstract class RecipeRemainder extends Item implements IRecipeRemainder {
     public abstract ItemStack getRemainingItem(ItemStack itemStack);
 
     @Override
-    public boolean hasCraftingRemainingItem() {
+    public final boolean hasCraftingRemainingItem() {
         return true;
     }
 
     @Override
-    public ItemStack getRecipeRemainder(ItemStack itemStack) {
+    public final ItemStack getRecipeRemainder(ItemStack itemStack) {
         return getRemainingItem(itemStack);
     }
 
     @Override
-    public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
+    public final ItemStack getCraftingRemainingItem(ItemStack itemStack) {
         return getRemainingItem(itemStack);
     }
 }
