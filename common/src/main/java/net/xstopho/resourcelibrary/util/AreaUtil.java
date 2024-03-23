@@ -21,7 +21,7 @@ import java.util.List;
 public final class AreaUtil {
 
     public static void breakNeighborBlocks(Level level, Player player, int radius, int miningLevel) {
-        if (miningLevel <= 0 || miningLevel >= 4) throw new IllegalArgumentException("Unexpected Mining Level (" + miningLevel + ")");
+        if (miningLevel <= 0) throw new IllegalArgumentException("Unexpected Mining Level (" + miningLevel + ")");
         if (!level.isClientSide) {
             ItemStack itemStack = player.getMainHandItem();
             boolean silkTouch = itemStack.getEnchantmentTags().toString().contains("silktouch");

@@ -35,7 +35,6 @@ public final class MiningLevelUtil {
         };
     }
 
-    // will be changed
     public static boolean isCorrectToolForMining(ItemStack stack, int miningLevel) {
         if (stack.getItem() instanceof DiggerItem item) {
             return item.getTier().getLevel() >= miningLevel;
