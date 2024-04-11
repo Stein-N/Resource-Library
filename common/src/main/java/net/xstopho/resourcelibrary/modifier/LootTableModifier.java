@@ -9,13 +9,13 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.xstopho.resourcelibrary.platform.Services;
+import net.xstopho.resourcelibrary.platform.CoreServices;
 import net.xstopho.resourcelibrary.registration.RegistryObject;
 
 public interface LootTableModifier {
 
     static LootTableModifier get() {
-        return Services.load(LootTableModifier.class);
+        return CoreServices.load(LootTableModifier.class);
     }
 
     void addToPool(RegistryObject<Item> item, float amount, float chance, ResourceLocation... lootTables);

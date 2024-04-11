@@ -2,7 +2,7 @@ package net.xstopho.resourcelibrary.registration;
 
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
-import net.xstopho.resourcelibrary.platform.Services;
+import net.xstopho.resourcelibrary.platform.CoreServices;
 
 import java.util.Collection;
 import java.util.function.Supplier;
@@ -24,7 +24,7 @@ public interface RegistryProvider<T> {
 
     interface Factory {
 
-        Factory INSTANCE = Services.load(Factory.class);
+        Factory INSTANCE = CoreServices.load(Factory.class);
 
         <T> RegistryProvider<T> create(ResourceKey<? extends Registry<T>> resourceKey, String modId);
         default <T> RegistryProvider<T> create(Registry<T> registry, String modId) {
