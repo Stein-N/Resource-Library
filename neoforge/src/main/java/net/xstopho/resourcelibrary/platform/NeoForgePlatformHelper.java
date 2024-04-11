@@ -2,7 +2,7 @@ package net.xstopho.resourcelibrary.platform;
 
 public class NeoForgePlatformHelper implements IPlatformHelper {
     @Override
-    public Enum<?> getPlatform() {
+    public Platforms getPlatform() {
         return Platforms.NEOFORGE;
     }
 }

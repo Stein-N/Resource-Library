@@ -78,7 +78,8 @@ public class ExcavatorItem {
         public final boolean canAttackBlock(BlockState state, Level level, BlockPos pos, Player player) {
 
             if (level.getBlockState(pos).is(BlockTags.LOGS)) {
-                BlockPos lastPos = TreeTrimmingUtil.getLastBlock(level, pos);
+
+                BlockPos lastPos = new TreeTrimmingUtil().getLastBlock(level, pos);
 
                 if (!player.isCreative()) {
                     level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(getItem(level, lastPos))));
