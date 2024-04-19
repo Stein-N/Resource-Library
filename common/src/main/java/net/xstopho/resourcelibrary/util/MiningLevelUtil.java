@@ -8,6 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
+@SuppressWarnings("unchecked")
 public final class MiningLevelUtil {
 
     /**
@@ -15,10 +16,22 @@ public final class MiningLevelUtil {
      * By default it returns the Diamond Mining Level
      */
     public static int getMiningLevel(BlockState state) {
+        if (woodMineable(state)) return 0;
         if (state.is(BlockTags.NEEDS_STONE_TOOL)) return 1;
         if (state.is(BlockTags.NEEDS_IRON_TOOL)) return 2;
         if (state.is(BlockTags.NEEDS_DIAMOND_TOOL)) return 3;
-        return 0;
+        return -1;
+    }
+
+
+    static boolean woodMineable(BlockState state) {
+        return woodMineable(state, BlockTags.MINEABLE_WITH_AXE, BlockTags.MINEABLE_WITH_HOE,
+                BlockTags.MINEABLE_WITH_PICKAXE, BlockTags.MINEABLE_WITH_SHOVEL);
+    }
+
+    static boolean woodMineable(BlockState state, TagKey<Block>... tags) {
+        for (TagKey<Block> tag : tags) if (state.is(tag)) return true;
+        return false;
     }
 
     /**

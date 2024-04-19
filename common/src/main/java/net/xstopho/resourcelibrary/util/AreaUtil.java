@@ -31,7 +31,11 @@ public final class AreaUtil {
                 BlockState blockState = level.getBlockState(blockPos);
                 Block block = blockState.getBlock();
 
-                if (miningLevel >= MiningLevelUtil.getMiningLevel(blockState) && isBlockMineable(itemStack, blockState) && !hasBlockEntity(block, blockState)) {
+                int stateMiningLevel = MiningLevelUtil.getMiningLevel(blockState);
+
+                if (stateMiningLevel == -1) return; // Custom MiningLevel gets ignored for now
+
+                if (miningLevel >= stateMiningLevel && isBlockMineable(itemStack, blockState) && !hasBlockEntity(block, blockState)) {
                     level.destroyBlock(blockPos, false);
                     if (!player.isCreative()) {
                         if (silkTouch && !(block instanceof AmethystBlock)) spawnItem(level, blockPos, block);
@@ -42,7 +46,7 @@ public final class AreaUtil {
         }
     }
 
-    private static List<BlockPos> calcRay(Level level, Player player, int radius) {
+    static List<BlockPos> calcRay(Level level, Player player, int radius) {
         ArrayList<BlockPos> blockResultList = new ArrayList<>();
         Vec3 cameraPos = player.getEyePosition(1.0F);
         Vec3 rotation = player.getViewVector(1.0F);
@@ -69,15 +73,15 @@ public final class AreaUtil {
         return blockResultList;
     }
 
-    private static void spawnItem(Level level, BlockPos pos, Block block) {
+    static void spawnItem(Level level, BlockPos pos, Block block) {
         level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(block.asItem(), 1)));
     }
 
-    private static boolean isBlockMineable(ItemStack stack, BlockState state) {
+    static boolean isBlockMineable(ItemStack stack, BlockState state) {
         return stack.getItem().isCorrectToolForDrops(state);
     }
 
-    private static boolean hasBlockEntity(Block block, BlockState state) {
+    static boolean hasBlockEntity(Block block, BlockState state) {
         return (state.hasBlockEntity() || block instanceof EntityBlock);
     }
 }
