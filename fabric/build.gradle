@@ -1,9 +1,9 @@
 plugins {
-    id 'fabric-loom' version '1.5-SNAPSHOT'
+    id 'fabric-loom' version '1.6-SNAPSHOT'
 }
 
 base {
-    archivesName = "${mod_name}-fabric-${minecraft_version}"
+    archivesName = "${mod_id}-fabric-${minecraft_version}"
 }
 
 dependencies {
@@ -11,7 +11,7 @@ dependencies {
     mappings loom.officialMojangMappings()
 
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
-    modApi "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}+${minecraft_version}"
+    modApi "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
 
     compileOnly project(":common")
 }
@@ -24,9 +24,9 @@ sourceSets {
 }
 
 loom {
-    if (project(":common").file("src/main/resources/${mod_id}.accesswidener").exists()) {
-        accessWidenerPath.set(project(":common").file("src/main/resources/${mod_id}.accesswidener"))
-    }
+    var aw = project(":common").file("src/main/resources/${mod_id}.accesswidener")
+    if (aw.exists()) accessWidenerPath.set(aw)
+
     mixin {
         defaultRefmapName.set("${mod_id}.refmap.json")
     }
@@ -35,30 +35,21 @@ loom {
             client()
             setConfigName("Fabric Client")
             ideConfigGenerated(true)
-            runDir("run")
+            runDir("runs/client")
         }
-        testClient {
+        testmodClient {
             client()
-            setConfigName("Fabric Test Client")
+            setConfigName("Fabric Testmod Client")
             ideConfigGenerated(true)
+            programArgs('--username', 'Dev')
             runDir("run")
             source sourceSets.testmod
         }
     }
 }
 
-tasks.withType(JavaCompile).configureEach {
-    source(project(":common").sourceSets.main.allSource)
-}
-tasks.withType(Javadoc).configureEach {
-    source(project(":common").sourceSets.main.allJava)
-}
-tasks.named("sourcesJar", Jar) {
-    from(project(":common").sourceSets.main.allSource)
-}
-
-processResources {
-    from project(":common").sourceSets.main.resources
-    from file("src/main/generated")
-    exclude 'icon_forge.png'
+// Loader Specific Settings
+publishMods {
+    file = remapJar.archiveFile
+    modLoaders.addAll("fabric", "quilt")
 }
