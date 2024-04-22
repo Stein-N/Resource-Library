@@ -53,3 +53,15 @@ publishMods {
     file = remapJar.archiveFile
     modLoaders.addAll("fabric", "quilt")
 }
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            pom.withXml {
+                asNode().dependencies.each { node ->
+                    node.replaceNode {}
+                }
+            }
+        }
+    }
+}

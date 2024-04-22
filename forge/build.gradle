@@ -60,3 +60,15 @@ publishMods {
     file = jar.archiveFile
     modLoaders.add("forge")
 }
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            pom.withXml {
+                asNode().dependencies.each { node ->
+                    node.replaceNode {}
+                }
+            }
+        }
+    }
+}

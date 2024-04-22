@@ -31,3 +31,15 @@ publishMods {
     file = jar.archiveFile
     modLoaders.add("neoforge")
 }
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            pom.withXml {
+                asNode().dependencies.each { node ->
+                    node.replaceNode {}
+                }
+            }
+        }
+    }
+}
