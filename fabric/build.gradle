@@ -3,7 +3,7 @@ plugins {
 }
 
 base {
-    archivesName = "${mod_id}-fabric-${minecraft_version}"
+    archivesName = "${mod_id}-fabric"
 }
 
 dependencies {
@@ -42,7 +42,7 @@ loom {
             setConfigName("Fabric Testmod Client")
             ideConfigGenerated(true)
             programArgs('--username', 'Dev')
-            runDir("run")
+            runDir("runs/client")
             source sourceSets.testmod
         }
     }

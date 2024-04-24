@@ -11,7 +11,7 @@ subprojects {
     apply plugin: 'me.modmuss50.mod-publish-plugin'
 
     java {
-        toolchain.languageVersion = JavaLanguageVersion.of(17)
+        toolchain.languageVersion = JavaLanguageVersion.of(21)
         withSourcesJar()
         withJavadocJar()
     }
@@ -25,9 +25,9 @@ subprojects {
     // Basic Settings for the Mod Publish Plugin by modmuss50
     // It also uses the CHANGELOG.md for an ongoing Changelog File
     publishMods {
-        if (project.name in ['fabric', 'forge', 'neoforge']) {
+        if (project.name != 'common') {
             displayName = file.map { it.asFile.name }
-            type = ALPHA
+            type = STABLE
 
             var changelogFile = rootProject.file('CHANGELOG.md')
             if (changelogFile.exists()) changelog = changelogFile.text
@@ -36,17 +36,23 @@ subprojects {
             modrinth {
                 accessToken = MODRINTH_KEY
                 projectId = modrinth_id
-                minecraftVersions.add("1.20.5")
+                minecraftVersionRange {
+                    start = '1.20'
+                    end = '1.20.5'
+                }
             }
             curseforge {
                 accessToken = CURSEFORGE_KEY
                 projectId = curseforge_id
-                minecraftVersions.add("1.20.5")
+                minecraftVersionRange {
+                    start = '1.20'
+                    end = '1.20.5'
+                }
 
                 clientRequired = true
                 serverRequired = true
 
-                javaVersions.add(JavaVersion.VERSION_17)
+                javaVersions.addAll(JavaVersion.VERSION_21)
             }
         }
     }
@@ -88,24 +94,24 @@ subprojects {
     Spec<Task> notNeoTask = { Task itTask -> !itTask.name.startsWith("neo") } as Spec<Task>
     tasks.withType(JavaCompile).matching(notNeoTask).configureEach {
         it.options.encoding = 'UTF-8'
-        it.options.getRelease().set(17)
-        if (project.name in ['fabric', 'forge', 'neoforge']) {
+        it.options.getRelease().set(21)
+        if (project.name != 'common') {
             source(project(":common").sourceSets.main.allSource)
         }
     }
     tasks.withType(Javadoc).matching(notNeoTask).configureEach {
         options.addStringOption('Xdoclint:none', '-quiet')
-        if (project.name in ['fabric', 'forge', 'neoforge']) {
+        if (project.name != 'common') {
             source(project(":common").sourceSets.main.allJava)
         }
     }
     tasks.named("sourcesJar", Jar) {
-        if (project.name in ['fabric', 'forge', 'neoforge']) {
+        if (project.name != 'common') {
             from(project(":common").sourceSets.main.allSource)
         }
     }
     tasks.withType(ProcessResources).matching(notNeoTask).configureEach() {
-        if (project.name in ['fabric', 'forge', 'neoforge']) {
+        if (project.name != 'common') {
             from project(":common").sourceSets.main.resources
             from file("src/generated")
         }
