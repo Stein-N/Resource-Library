@@ -14,9 +14,9 @@ public class ItemGroupRegistry {
             CreativeModeTab.builder(CreativeModeTab.Row.TOP, -1).title(Component.literal("Testmod"))
                     .icon(() -> new ItemStack(Items.DIAMOND)).displayItems((itemDisplayParameters, output) -> {
 
-                        output.accept(ItemRegistry.test_axe);
-                        output.accept(ItemRegistry.test_pickaxe);
-                        output.accept(ItemRegistry.test_shovel);
+//                        output.accept(ItemRegistry.test_axe);
+//                        output.accept(ItemRegistry.test_pickaxe);
+//                        output.accept(ItemRegistry.test_shovel);
                         output.accept(ItemRegistry.test_recipe_remainder);
 
                     }).build());
