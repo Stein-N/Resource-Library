@@ -1,17 +1,21 @@
 package net.xstopho.resourcelibrary.modifier.loot_tables;
 
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.storage.loot.LootTable;
 
 public class ArchaeologyLootTables {
 
-    public static final ResourceLocation DESERT_PYRAMID = getLootTableId("desert_pyramid");
-    public static final ResourceLocation DESERT_WELL = getLootTableId("desert_well");
-    public static final ResourceLocation OCEAN_RUIN_COLD = getLootTableId("ocean_ruin_cold");
-    public static final ResourceLocation OCEAN_RUIN_WARM = getLootTableId("ocean_ruin_warm");
-    public static final ResourceLocation TRAIL_RUINS_COMMON = getLootTableId("trail_ruins_common");
-    public static final ResourceLocation TRAIL_RUINS_RARE = getLootTableId("trail_ruins_rare");
+    //TODO: switch to ResourceKeys
+    public static final ResourceKey<LootTable> DESERT_PYRAMID = createKey("desert_pyramid");
+    public static final ResourceKey<LootTable> DESERT_WELL = createKey("desert_well");
+    public static final ResourceKey<LootTable> OCEAN_RUIN_COLD = createKey("ocean_ruin_cold");
+    public static final ResourceKey<LootTable> OCEAN_RUIN_WARM = createKey("ocean_ruin_warm");
+    public static final ResourceKey<LootTable> TRAIL_RUINS_COMMON = createKey("trail_ruins_common");
+    public static final ResourceKey<LootTable> TRAIL_RUINS_RARE = createKey("trail_ruins_rare");
 
-    private static ResourceLocation getLootTableId(String id) {
-        return new ResourceLocation("archaeology/" + id);
+    private static ResourceKey<LootTable> createKey(String id) {
+        return ResourceKey.create(Registries.LOOT_TABLE, new ResourceLocation("archeology/" + id));
     }
 }

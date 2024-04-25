@@ -1,55 +1,58 @@
 package net.xstopho.resourcelibrary.modifier.loot_tables;
 
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.storage.loot.LootTable;
 
 public class ChestLootTables {
 
-    public static final ResourceLocation ABANDONED_MINESHAFT = getLootTableId("abandoned_mineshaft");
-    public static final ResourceLocation ANCIENT_CITY = getLootTableId("ancient_city");
-    public static final ResourceLocation ANCIENT_CITY_ICE_BOX = getLootTableId("ancient_city_ice_box");
-    public static final ResourceLocation BASTION_BRIDGE = getLootTableId("bastion_bridge");
-    public static final ResourceLocation BASTION_HOGLIN_STABLE = getLootTableId("bastion_hoglin_stable");
-    public static final ResourceLocation BASTION_OTHER = getLootTableId("bastion_other");
-    public static final ResourceLocation BASTION_TREASURE = getLootTableId("bastion_treasure");
-    public static final ResourceLocation BURIED_TREASURE = getLootTableId("buried_treasure");
-    public static final ResourceLocation DESERT_PYRAMID = getLootTableId("desert_pyramid");
-    public static final ResourceLocation END_CITY_TREASURE = getLootTableId("end_city_treasure");
-    public static final ResourceLocation IGLOO_CHEST = getLootTableId("igloo_chest");
-    public static final ResourceLocation JUNGLE_TEMPLE = getLootTableId("jungle_temple");
-    public static final ResourceLocation JUNGLE_TEMPLE_DISPENSER = getLootTableId("jungle_temple_dispenser");
-    public static final ResourceLocation NETHER_BRIDGE = getLootTableId("nether_bridge");
-    public static final ResourceLocation PILLAGER_OUTPOST = getLootTableId("pillager_outpost");
-    public static final ResourceLocation RUINED_PORTAL = getLootTableId("ruined_portal");
-    public static final ResourceLocation SHIPWRECK_MAP = getLootTableId("shipwreck_map");
-    public static final ResourceLocation SHIPWRECK_SUPPLY = getLootTableId("shipwreck_supply");
-    public static final ResourceLocation SHIPWRECK_TREASURE = getLootTableId("shipwreck_treasure");
-    public static final ResourceLocation SIMPLE_DUNGEON = getLootTableId("simple_dungeon");
-    public static final ResourceLocation SPAWN_BONUS_CHEST = getLootTableId("spawn_bonus_chest");
-    public static final ResourceLocation STRONGHOLD_CORRIDOR = getLootTableId("stronghold_corridor");
-    public static final ResourceLocation STRONGHOLD_CROSSING = getLootTableId("stringhold_crossing");
-    public static final ResourceLocation STRONGHOLD_LIBRARY = getLootTableId("stronghold_library");
-    public static final ResourceLocation UNDERWATER_RUIN_BIG = getLootTableId("underwater_ruin_big");
-    public static final ResourceLocation UNDERWATER_RUIN_SMALL = getLootTableId("underwater_ruin_small");
-    public static final ResourceLocation VILLAGE_ARMORER = getLootTableId("village/village_armorer");
-    public static final ResourceLocation VILLAGE_BUTCHER = getLootTableId("village/village_butcher");
-    public static final ResourceLocation VILLAGE_CARTOGRAPHER = getLootTableId("village/village_cartographer");
-    public static final ResourceLocation VILLAGE_DESERT_HOUSE = getLootTableId("village/village_desert_house");
-    public static final ResourceLocation VILLAGE_FISHER = getLootTableId("village/village_fisher");
-    public static final ResourceLocation VILLAGE_FLETCHER = getLootTableId("village/village_fletcher");
-    public static final ResourceLocation VILLAGE_MASON = getLootTableId("village/village_mason");
-    public static final ResourceLocation VILLAGE_PLAINS_HOUSE = getLootTableId("village/village_plains_house");
-    public static final ResourceLocation VILLAGE_SAVANNA_HOUSE = getLootTableId("village/village_savanna_house");
-    public static final ResourceLocation VILLAGE_SHEPARD = getLootTableId("village/village_shepard");
-    public static final ResourceLocation VILLAGE_SNOWY_HOUSE = getLootTableId("village/village_snowy_house");
-    public static final ResourceLocation VILLAGE_TAIGA_HOUSE = getLootTableId("village/village_taiga_house");
-    public static final ResourceLocation VILLAGE_TANNERY = getLootTableId("village/village_tannery");
-    public static final ResourceLocation VILLAGE_TEMPLE = getLootTableId("village/village_temple");
-    public static final ResourceLocation VILLAGE_TOOLSMITH = getLootTableId("village/village_toolsmith");
-    public static final ResourceLocation VILLAGE_WEAPONSMITH = getLootTableId("village/village_weaponsmith");
-    public static final ResourceLocation WOODLAND_MANSION = getLootTableId("woodland_mansion");
+    public static final ResourceKey<LootTable> ABANDONED_MINESHAFT = createKey("abandoned_mineshaft");
+    public static final ResourceKey<LootTable> ANCIENT_CITY = createKey("ancient_city");
+    public static final ResourceKey<LootTable> ANCIENT_CITY_ICE_BOX = createKey("ancient_city_ice_box");
+    public static final ResourceKey<LootTable> BASTION_BRIDGE = createKey("bastion_bridge");
+    public static final ResourceKey<LootTable> BASTION_HOGLIN_STABLE = createKey("bastion_hoglin_stable");
+    public static final ResourceKey<LootTable> BASTION_OTHER = createKey("bastion_other");
+    public static final ResourceKey<LootTable> BASTION_TREASURE = createKey("bastion_treasure");
+    public static final ResourceKey<LootTable> BURIED_TREASURE = createKey("buried_treasure");
+    public static final ResourceKey<LootTable> DESERT_PYRAMID = createKey("desert_pyramid");
+    public static final ResourceKey<LootTable> END_CITY_TREASURE = createKey("end_city_treasure");
+    public static final ResourceKey<LootTable> IGLOO_CHEST = createKey("igloo_chest");
+    public static final ResourceKey<LootTable> JUNGLE_TEMPLE = createKey("jungle_temple");
+    public static final ResourceKey<LootTable> JUNGLE_TEMPLE_DISPENSER = createKey("jungle_temple_dispenser");
+    public static final ResourceKey<LootTable> NETHER_BRIDGE = createKey("nether_bridge");
+    public static final ResourceKey<LootTable> PILLAGER_OUTPOST = createKey("pillager_outpost");
+    public static final ResourceKey<LootTable> RUINED_PORTAL = createKey("ruined_portal");
+    public static final ResourceKey<LootTable> SHIPWRECK_MAP = createKey("shipwreck_map");
+    public static final ResourceKey<LootTable> SHIPWRECK_SUPPLY = createKey("shipwreck_supply");
+    public static final ResourceKey<LootTable> SHIPWRECK_TREASURE = createKey("shipwreck_treasure");
+    public static final ResourceKey<LootTable> SIMPLE_DUNGEON = createKey("simple_dungeon");
+    public static final ResourceKey<LootTable> SPAWN_BONUS_CHEST = createKey("spawn_bonus_chest");
+    public static final ResourceKey<LootTable> STRONGHOLD_CORRIDOR = createKey("stronghold_corridor");
+    public static final ResourceKey<LootTable> STRONGHOLD_CROSSING = createKey("stronghold_crossing");
+    public static final ResourceKey<LootTable> STRONGHOLD_LIBRARY = createKey("stronghold_library");
+    public static final ResourceKey<LootTable> UNDERWATER_RUIN_BIG = createKey("underwater_ruin_big");
+    public static final ResourceKey<LootTable> UNDERWATER_RUIN_SMALL = createKey("underwater_ruin_small");
+    public static final ResourceKey<LootTable> WOODLAND_MANSION = createKey("woodland_mansion");
+    public static final ResourceKey<LootTable> VILLAGE_ARMORER = createKey("village/village_armorer");
+    public static final ResourceKey<LootTable> VILLAGE_BUTCHER = createKey("village/village_butcher");
+    public static final ResourceKey<LootTable> VILLAGE_CARTOGRAPHER = createKey("village/village_cartographer");
+    public static final ResourceKey<LootTable> VILLAGE_DESERT_HOUSE = createKey("village/village_desert_house");
+    public static final ResourceKey<LootTable> VILLAGE_FISHER = createKey("village/village_fisher");
+    public static final ResourceKey<LootTable> VILLAGE_FLETCHER = createKey("village/village_fletcher");
+    public static final ResourceKey<LootTable> VILLAGE_MASON = createKey("village/village_mason");
+    public static final ResourceKey<LootTable> VILLAGE_PLAINS_HOUSE = createKey("village/village_plains_house");
+    public static final ResourceKey<LootTable> VILLAGE_SAVANNA_HOUSE = createKey("village/village_savanna_house");
+    public static final ResourceKey<LootTable> VILLAGE_SHEPARD = createKey("village/village_shepard");
+    public static final ResourceKey<LootTable> VILLAGE_SNOWY_HOUSE = createKey("village/village_snowy_house");
+    public static final ResourceKey<LootTable> VILLAGE_TAIGA_HOUSE = createKey("village/village_taiga_house");
+    public static final ResourceKey<LootTable> VILLAGE_TANNERY = createKey("village/village_tannery");
+    public static final ResourceKey<LootTable> VILLAGE_TEMPLE = createKey("village/village_temple");
+    public static final ResourceKey<LootTable> VILLAGE_TOOLSMITH = createKey("village/village_toolsmith");
+    public static final ResourceKey<LootTable> VILLAGE_WEAPONSMITH = createKey("village/village_weaponsmith");
 
 
-    private static ResourceLocation getLootTableId(String id) {
-        return new ResourceLocation("chests/" + id);
+    private static ResourceKey<LootTable> createKey(String id) {
+        return ResourceKey.create(Registries.LOOT_TABLE, new ResourceLocation("chests/" + id));
     }
 }
