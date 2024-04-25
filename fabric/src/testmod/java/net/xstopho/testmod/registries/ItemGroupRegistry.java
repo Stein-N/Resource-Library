@@ -17,7 +17,7 @@ public class ItemGroupRegistry {
 //                        output.accept(ItemRegistry.test_axe);
 //                        output.accept(ItemRegistry.test_pickaxe);
 //                        output.accept(ItemRegistry.test_shovel);
-                        output.accept(ItemRegistry.test_recipe_remainder);
+                        output.accept(ItemRegistry.TEST_RECIPE_REMAINDER.get());
 
                     }).build());
 
