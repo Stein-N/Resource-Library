@@ -8,7 +8,7 @@ import net.xstopho.resourcelibrary.platform.CoreServices;
 
 public class TagHelper {
 
-    static TagKey<Item> createPlatformTag(String id) {
+    public static TagKey<Item> createPlatformTag(String id) {
         return switch (CoreServices.PLATFORM) {
             case FABRIC, NEOFORGE -> createTag("c", id);
             case FORGE -> createTag("forge", id);

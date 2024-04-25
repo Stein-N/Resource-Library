@@ -1,4 +1,4 @@
-#### v1.2.0
+#### v1.2.1
 - adapting new Tag Convention for TagHelper
 
 #### v1.1.0
