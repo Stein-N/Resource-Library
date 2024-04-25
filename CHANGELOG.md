@@ -1,3 +1,6 @@
+#### v1.2.0
+- adapting new Tag Convention for TagHelper
+
 #### v1.1.0
 - adding missing LootTables from the 1.20.5 Update
 - fixing Loot Table Abstraction to fit the new ResourceKeys

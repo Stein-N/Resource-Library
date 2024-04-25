@@ -8,21 +8,15 @@ import net.xstopho.resourcelibrary.platform.CoreServices;
 
 public class TagHelper {
 
-    TagKey<Item> createPlatformTags(String commonId, String forgeId) {
-        TagKey<Item> key = switch (CoreServices.PLATFORM) {
-            case FABRIC, NEOFORGE -> getCommonTag(commonId);
-            case FORGE -> getForgeTag(forgeId);
+    static TagKey<Item> createPlatformTag(String id) {
+        return switch (CoreServices.PLATFORM) {
+            case FABRIC, NEOFORGE -> createTag("c", id);
+            case FORGE -> createTag("forge", id);
+            case NO_LOADER -> throw new IllegalStateException("No Mod Loader defined or you are in an non Mod Environment");
         };
-        if (key == null) throw new IllegalStateException("Can't create a Tag for a non mod-loader environment or the current Mod loader isn't supported yet!");
-
-        return key;
     }
 
-    TagKey<Item> getCommonTag(String id) {
-        return TagKey.create(Registries.ITEM, new ResourceLocation("c", id));
-    }
-
-    TagKey<Item> getForgeTag(String id) {
-        return TagKey.create(Registries.ITEM, new ResourceLocation("forge", id));
+    static TagKey<Item> createTag(String prefix, String id) {
+        return TagKey.create(Registries.ITEM, new ResourceLocation(prefix, id));
     }
 }
