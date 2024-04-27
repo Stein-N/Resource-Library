@@ -8,7 +8,7 @@ base {
 }
 
 java {
-    toolchain.languageVersion = JavaLanguageVersion.of(17)
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
     withSourcesJar()
     withJavadocJar()
 }
@@ -49,7 +49,7 @@ processResources {
             "neoforge_loader_version_range": neoforge_loader_version_range
     ]
 
-    filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/mods.toml', '*.mixins.json']) {
+    filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/mods.toml', 'META-INF/neoforge.mods.toml', '*.mixins.json']) {
         expand expandProps
     }
     inputs.properties(expandProps)
