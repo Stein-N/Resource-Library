@@ -1,0 +1,46 @@
+plugins {
+    id 'java-library'
+    id 'ml-common-publish'
+}
+
+base {
+    archivesName = "$mod_id-$project.name-"
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
+    withSourcesJar()
+    withJavadocJar()
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://raw.githubusercontent.com/Stein-N/resources/main/maven' }
+    maven { url 'https://repo.spongepowered.org/repository/maven-public/' }
+}
+
+processResources {
+    var expandProps = [
+            // Project related Keys
+            "version": version,
+            "group": project.group,
+
+            // Mod related Keys
+            "minecraft_version": minecraft_version,
+            "mod_name": mod_name,
+            "mod_author": mod_author,
+            "mod_id": mod_id,
+            "mod_license": mod_license,
+            "mod_credits": mod_credits,
+            "mod_description": mod_description,
+
+            // Fabric Keys
+            "fabric_loader_version": fabric_loader_version,
+            "fabric_api_version": fabric_api_version,
+    ]
+
+    filesMatching(['pack.mcmeta', 'fabric.mod.json', '*.mixins.json']) {
+        expand expandProps
+    }
+    inputs.properties(expandProps)
+}

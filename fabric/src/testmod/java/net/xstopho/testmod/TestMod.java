@@ -1,6 +1,9 @@
 package net.xstopho.testmod;
 
 import net.fabricmc.api.ModInitializer;
+import net.xstopho.resourcelibrary.modifier.LootTableModifier;
+import net.xstopho.resourcelibrary.modifier.loot_tables.ChestLootTables;
+import net.xstopho.resourcelibrary.modifier.loot_tables.EntityLootTables;
 import net.xstopho.testmod.registries.ItemGroupRegistry;
 import net.xstopho.testmod.registries.ItemRegistry;
 
@@ -9,5 +12,9 @@ public class TestMod implements ModInitializer {
     public void onInitialize() {
         ItemRegistry.init();
         ItemGroupRegistry.init();
+
+        LootTableModifier modifier = LootTableModifier.get();
+        modifier.addToPool(ItemRegistry.TEST_RECIPE_REMAINDER, 1f, 1f, ChestLootTables.SPAWN_BONUS_CHEST);
+        modifier.addToPool(ItemRegistry.TEST_RECIPE_REMAINDER, 1f, 1f, EntityLootTables.ZOMBIE);
     }
 }

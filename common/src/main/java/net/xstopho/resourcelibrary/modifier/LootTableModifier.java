@@ -1,6 +1,7 @@
 package net.xstopho.resourcelibrary.modifier;
 
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -19,9 +20,9 @@ public interface LootTableModifier {
         return CoreServices.load(LootTableModifier.class);
     }
 
-    void addToPool(RegistryObject<Item> item, float amount, float chance, ResourceKey<LootTable>... lootTables);
+    void addToPool(RegistryObject<Item> item, float amount, float chance, ResourceLocation... lootTables);
 
-    void addToPool(RegistryObject<Item> item, float minAmount, float maxAmount, float chance, ResourceKey<LootTable>... lootTables);
+    void addToPool(RegistryObject<Item> item, float minAmount, float maxAmount, float chance, ResourceLocation... lootTables);
 
     static LootPool.Builder createLootPool(ItemLike item, float chance, float amount) {
         return LootPool.lootPool()
