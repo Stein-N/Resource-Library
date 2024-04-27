@@ -16,9 +16,7 @@
     "icon": "icon_fabric.png",
     "environment": "*",
     "entrypoints": {
-        "main": [
-            "net.xstopho.resourcelibrary.ResourceLibrary"
-        ]
+        "main": [ "net.xstopho.resourcelibrary.ResourceLibrary" ]
     },
     "mixins": [
         "${mod_id}.mixins.json",
@@ -27,7 +25,7 @@
     "depends": {
         "fabric-api": "*",
         "fabricloader": "*",
-        "minecraft": "1.20.5",
+        "minecraft": ">=1.20.5 <1.21",
         "java": ">=21"
     }
 }
