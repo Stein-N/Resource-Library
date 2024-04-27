@@ -10,19 +10,19 @@ import net.xstopho.resourcelibrary.registration.RegistryObject;
 public class FabricLootTableModifier implements LootTableModifier {
 
     @Override
-    public final void addToPool(RegistryObject<Item> item, float amount, float chance, ResourceLocation... lootTables) {
-        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-            for (ResourceLocation table : lootTables) {
-                if (id.equals(table)) tableBuilder.withPool(LootTableModifier.createLootPool(item.get(), chance, 1));
+    public final void addToPool(RegistryObject<Item> item, float amount, float chance, ResourceKey<LootTable>... lootTables) {
+        LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
+            for (ResourceKey<LootTable> table : lootTables) {
+                if (key.equals(table)) tableBuilder.withPool(LootTableModifier.createLootPool(item.get(), chance, 1));
             }
         });
     }
 
     @Override
-    public final void addToPool(RegistryObject<Item> item, float minAmount, float maxAmount, float chance, ResourceLocation... lootTables) {
-        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-            for (ResourceLocation table : lootTables) {
-                if (id.equals(table)) tableBuilder.withPool(LootTableModifier.createLootPool(item.get(), chance, minAmount, maxAmount));
+    public final void addToPool(RegistryObject<Item> item, float minAmount, float maxAmount, float chance, ResourceKey<LootTable>... lootTables) {
+        LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
+            for (ResourceKey<LootTable> table : lootTables) {
+                if (key.equals(table)) tableBuilder.withPool(LootTableModifier.createLootPool(item.get(), chance, minAmount, maxAmount));
             }
         });
     }

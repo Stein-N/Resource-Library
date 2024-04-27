@@ -20,9 +20,9 @@ public interface LootTableModifier {
         return CoreServices.load(LootTableModifier.class);
     }
 
-    void addToPool(RegistryObject<Item> item, float amount, float chance, ResourceLocation... lootTables);
+    void addToPool(RegistryObject<Item> item, float amount, float chance, ResourceKey<LootTable>... lootTables);
 
-    void addToPool(RegistryObject<Item> item, float minAmount, float maxAmount, float chance, ResourceLocation... lootTables);
+    void addToPool(RegistryObject<Item> item, float minAmount, float maxAmount, float chance, ResourceKey<LootTable>... lootTables);
 
     static LootPool.Builder createLootPool(ItemLike item, float chance, float amount) {
         return LootPool.lootPool()
