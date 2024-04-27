@@ -2,6 +2,8 @@ package net.xstopho.testmod;
 
 import net.fabricmc.api.ModInitializer;
 import net.xstopho.resourcelibrary.modifier.LootTableModifier;
+import net.xstopho.resourcelibrary.modifier.loot_tables.ChestLootTables;
+import net.xstopho.resourcelibrary.modifier.loot_tables.EntityLootTables;
 import net.xstopho.testmod.registries.ItemGroupRegistry;
 import net.xstopho.testmod.registries.ItemRegistry;
 
