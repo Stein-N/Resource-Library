@@ -8,10 +8,10 @@ import net.xstopho.resourcelibrary.platform.CoreServices;
 
 public class TagHelper {
 
-    public static TagKey<Item> createPlatformTag(String fabric, String forge) {
+    public static TagKey<Item> createPlatformTag(String id) {
         return switch (CoreServices.PLATFORM) {
-            case FABRIC -> createTag("c", fabric);
-            case FORGE, NEOFORGE -> createTag("forge", forge);
+            case FABRIC, NEOFORGE -> createTag("c", id);
+            case FORGE -> createTag("forge", id);
             case NO_LOADER -> throw new IllegalStateException("No Mod Loader defined or you are in an non Mod Environment!");
         };
     }
