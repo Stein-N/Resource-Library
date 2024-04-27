@@ -33,13 +33,19 @@ processResources {
             "mod_license": mod_license,
             "mod_credits": mod_credits,
             "mod_description": mod_description,
+            "minecraft_version_range": minecraft_version_range,
 
             // Fabric Keys
             "fabric_loader_version": fabric_loader_version,
             "fabric_api_version": fabric_api_version,
+
+            // Forge Keys
+            "forge_version": forge_version,
+            "forge_loader_version_range": forge_loader_version_range,
+            "forge_version_range": forge_version_range
     ]
 
-    filesMatching(['pack.mcmeta', 'fabric.mod.json', '*.mixins.json']) {
+    filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/mods.toml', '*.mixins.json']) {
         expand expandProps
     }
     inputs.properties(expandProps)
