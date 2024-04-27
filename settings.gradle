@@ -14,3 +14,4 @@ plugins {
 rootProject.name = 'Resource-Library'
 include("common")
 include("fabric")
+include("forge")
