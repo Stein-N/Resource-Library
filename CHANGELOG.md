@@ -1,3 +1,10 @@
+#### v1.3.0
+- backport update
+- fabric 1.20 up to 1.20.4
+- forge 1.20.1 up to 1.20.4
+- neoforge 1.20.4
+- some internal changes for 1.20.5
+
 #### v1.2.1
 - adapting new Tag Convention for TagHelper
 

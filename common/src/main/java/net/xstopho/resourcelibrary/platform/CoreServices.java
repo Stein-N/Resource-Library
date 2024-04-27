@@ -1,6 +1,6 @@
 package net.xstopho.resourcelibrary.platform;
 
-import net.xstopho.resourcelibrary.ResourceLibraryConstants;
+import net.xstopho.resourcelibrary.LibConstants;
 
 import java.util.ServiceLoader;
 
@@ -12,7 +12,7 @@ public class CoreServices {
         final T loadedService = ServiceLoader.load(clazz)
                 .findFirst()
                 .orElseThrow(() -> new NullPointerException("Failed to load service for " + clazz.getName()));
-        ResourceLibraryConstants.LOG.debug("Loaded {} for service {}", loadedService, clazz);
+        LibConstants.LOG.debug("Loaded {} for service {}", loadedService, clazz);
         return loadedService;
     }
 }
