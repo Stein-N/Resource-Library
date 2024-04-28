@@ -12,11 +12,22 @@ java {
     withSourcesJar()
     withJavadocJar()
 }
+tasks.withType(GenerateModuleMetadata).configureEach {
+    enabled = project.name == 'neoforge'
+}
 
 repositories {
     mavenCentral()
     maven { url 'https://raw.githubusercontent.com/Stein-N/resources/main/maven' }
     maven { url 'https://repo.spongepowered.org/repository/maven-public/' }
+}
+
+tasks.withType(GenerateModuleMetadata).configureEach {
+    enabled = project.name == 'neoforge'
+}
+
+tasks.withType(Javadoc).configureEach {
+    options.addStringOption('Xdoclint:none', '-quiet')
 }
 
 processResources {
