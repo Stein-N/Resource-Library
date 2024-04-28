@@ -12,9 +12,6 @@ java {
     withSourcesJar()
     withJavadocJar()
 }
-tasks.withType(GenerateModuleMetadata).configureEach {
-    enabled = project.name == 'neoforge'
-}
 
 repositories {
     mavenCentral()
