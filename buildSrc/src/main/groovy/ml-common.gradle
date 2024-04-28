@@ -19,6 +19,14 @@ repositories {
     maven { url 'https://repo.spongepowered.org/repository/maven-public/' }
 }
 
+tasks.withType(GenerateModuleMetadata).configureEach {
+    enabled = project.name == 'neoforge'
+}
+
+tasks.withType(Javadoc).configureEach {
+    options.addStringOption('Xdoclint:none', '-quiet')
+}
+
 processResources {
     var expandProps = [
             // Project related Keys
