@@ -12,12 +12,6 @@ import net.xstopho.resourcelibrary.registration.RegistryProvider;
 @Mod(LibConstants.MOD_ID)
 public class ResourceLibrary {
 
-    final RegistryProvider<Item> ITEMS = RegistryProvider.get(Registries.ITEM, LibConstants.MOD_ID);
-    final RegistryObject<Item> TEST = ITEMS.register("test_item", () -> new Item(new Item.Properties()));
-
     public ResourceLibrary(IEventBus eventBus) {
-        LootTableModifier modifier = LootTableModifier.get();
-
-        modifier.addToPool(TEST, 1f, 1f, ChestLootTables.SPAWN_BONUS_CHEST);
     }
 }
