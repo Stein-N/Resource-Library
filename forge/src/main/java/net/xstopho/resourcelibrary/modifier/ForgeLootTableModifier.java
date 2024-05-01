@@ -2,6 +2,7 @@ package net.xstopho.resourcelibrary.modifier;
 
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -12,7 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid = LibConstants.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class NeoForgeLootTableModifier implements LootTableModifier {
+public class ForgeLootTableModifier implements LootTableModifier {
 
     private static final List<Modifier> lootModifier = new LinkedList<>();
     private static final List<RangedModifier> rangedLootModifier = new LinkedList<>();
