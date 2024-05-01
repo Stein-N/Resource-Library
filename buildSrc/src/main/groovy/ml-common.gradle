@@ -47,11 +47,6 @@ processResources {
             "fabric_loader_version": fabric_loader_version,
             "fabric_api_version": fabric_api_version,
 
-            // Forge Keys
-            "forge_version": forge_version,
-            "forge_loader_version_range": forge_loader_version_range,
-            "forge_version_range": forge_version_range,
-
             // NeoForge Keys
             "neoforge_version": neoforge_version,
             "neoforge_loader_version_range": neoforge_loader_version_range
