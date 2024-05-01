@@ -1,3 +1,6 @@
+#### v1.3.1
+- removing testcode that get executed sometimes
+
 #### v1.3.0
 - backport update
 - fabric 1.20 up to 1.20.4
