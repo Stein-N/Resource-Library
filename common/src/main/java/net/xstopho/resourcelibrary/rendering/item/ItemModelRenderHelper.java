@@ -1,4 +1,4 @@
-package net.xstopho.resourcelibrary.rendering;
+package net.xstopho.resourcelibrary.rendering.item;
 
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
@@ -7,7 +7,7 @@ import net.minecraft.world.item.Item;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-public class ModelRenderHelper {
+public class ItemModelRenderHelper {
 
     private static final HashMap<Item, ModelResourceLocation> ITEM_MODELS = new LinkedHashMap<>();
 

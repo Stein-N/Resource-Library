@@ -8,7 +8,7 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.xstopho.resourcelibrary.rendering.ModelRenderHelper;
+import net.xstopho.resourcelibrary.rendering.item.ItemModelRenderHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
@@ -20,7 +20,7 @@ public class ItemRendererMixin {
 
     @ModifyVariable(method = "render", at = @At("HEAD"), argsOnly = true)
     public BakedModel useInHandModel(BakedModel model, ItemStack stack, ItemDisplayContext displayContext, boolean leftHanded, PoseStack poseStack, MultiBufferSource bufferSource, int light, int overlay) {
-        HashMap<Item, ModelResourceLocation> map = ModelRenderHelper.getItemModels();
+        HashMap<Item, ModelResourceLocation> map = ItemModelRenderHelper.getItemModels();
 
         if (isInHand(displayContext) && map.containsKey(stack.getItem())) return getModel(map.get(stack.getItem()));
 
