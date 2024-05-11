@@ -6,6 +6,7 @@ import net.xstopho.resourcelibrary.modifier.loot_tables.ChestLootTables;
 import net.xstopho.resourcelibrary.modifier.loot_tables.EntityLootTables;
 import net.xstopho.testmod.registries.ItemGroupRegistry;
 import net.xstopho.testmod.registries.ItemRegistry;
+import net.xstopho.testmod.rendering.TestItemModelRender;
 
 public class TestMod implements ModInitializer {
     @Override
@@ -16,5 +17,7 @@ public class TestMod implements ModInitializer {
         LootTableModifier modifier = LootTableModifier.get();
         modifier.addToPool(ItemRegistry.TEST_RECIPE_REMAINDER, 1f, 1f, ChestLootTables.SPAWN_BONUS_CHEST);
         modifier.addToPool(ItemRegistry.TEST_RECIPE_REMAINDER, 1f, 1f, EntityLootTables.ZOMBIE);
+
+        TestItemModelRender.init();
     }
 }
