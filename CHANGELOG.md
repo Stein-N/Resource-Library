@@ -1,3 +1,7 @@
+#### v2.0.0
+- adding Model Render Helper
+- adding Block Model Generator Helper methods
+
 #### v1.3.1
 - removing testcode that gets executed sometimes
 - porting to forge 1.20.6

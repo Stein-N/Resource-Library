@@ -1,15 +1,13 @@
 {
     "required": true,
     "minVersion": "0.8",
-    "package": "net.xstopho.resourcelibrary.mixin",
+    "package": "net.xstopho.resourcelibrary",
     "refmap": "${mod_id}.refmap.json",
     "compatibilityLevel": "JAVA_17",
-    "mixins": [
-    ],
+    "mixins": [],
     "client": [
     ],
-    "server": [
-    ],
+    "server": [],
     "injectors": {
         "defaultRequire": 1
     }
