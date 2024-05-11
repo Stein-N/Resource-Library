@@ -1,7 +1,6 @@
 package net.xstopho.resourcelibrary.modifier;
 
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -11,7 +10,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.xstopho.resourcelibrary.platform.CoreServices;
+import net.xstopho.resourcelibrary.service.CoreServices;
 import net.xstopho.resourcelibrary.registration.RegistryObject;
 
 public interface LootTableModifier {
