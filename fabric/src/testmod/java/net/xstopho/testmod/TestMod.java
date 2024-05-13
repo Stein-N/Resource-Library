@@ -7,8 +7,13 @@ import net.xstopho.resourcelibrary.modifier.loot_tables.EntityLootTables;
 import net.xstopho.testmod.registries.ItemGroupRegistry;
 import net.xstopho.testmod.registries.ItemRegistry;
 import net.xstopho.testmod.rendering.TestItemModelRender;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TestMod implements ModInitializer {
+
+    private static Logger LOGGER = LoggerFactory.getLogger("Testmod");
+
     @Override
     public void onInitialize() {
         ItemRegistry.init();
