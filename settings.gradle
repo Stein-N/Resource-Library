@@ -15,4 +15,6 @@ plugins {
 rootProject.name = 'Resource-Library-1.21'
 include("common")
 include("fabric")
+include("fabric-testmod")
 include("neoforge")
+include("neoforge-testmod")

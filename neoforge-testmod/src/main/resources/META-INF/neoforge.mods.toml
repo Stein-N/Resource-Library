@@ -1,0 +1,25 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+    modId = "testmod"
+    version = "1.0.0"
+    displayName = "Test Mod"
+    authors = "xStopho"
+    description = '''Test Mod Description'''
+    logoFile = "icon_neoforge.png"
+
+[[dependencies.${mod_id}]]
+    modId = "neoforge"
+    required = true
+    versionRange = "[20.6.62-beta,)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "minecraft"
+    required = true
+    versionRange = "[1.20.6,)"
+    ordering = "NONE"
+    side = "BOTH"

@@ -27,5 +27,6 @@ eclipse
 
 
 /fabric/src/generated/
+/fabric-testmod/src/generated/
 /neoforge/src/generated/
-/forge/src/generated/
+/neoforge-testmod/src/generated/

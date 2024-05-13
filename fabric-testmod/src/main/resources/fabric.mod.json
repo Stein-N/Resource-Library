@@ -15,9 +15,8 @@
     "icon": "icon.png",
     "environment": "*",
     "entrypoints": {
-        "main": [
-            "net.xstopho.testmod.TestMod"
-        ]
+        "main": [ "net.xstopho.testmod.TestMod" ],
+        "fabric-datagen": [ "net.xstopho.testmod.TestModDatagen" ]
     },
     "depends": {
         "fabric-api": "*",

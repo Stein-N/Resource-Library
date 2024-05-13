@@ -11,44 +11,12 @@ dependencies {
     modApi "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}+${minecraft_version}"
 }
 
-sourceSets {
-    testmod {
-        runtimeClasspath += main.runtimeClasspath;
-        compileClasspath += main.compileClasspath;
-    }
-}
-
 loom {
     var aw = project(":common").file("src/main/resources/${mod_id}.accesswidener")
     if (aw.exists()) accessWidenerPath.set(aw)
 
     mixin {
         defaultRefmapName.set("${mod_id}.refmap.json")
-    }
-    runs {
-        client {
-            client()
-            setConfigName("Fabric Client")
-            ideConfigGenerated(true)
-            programArgs('--username', 'Dev')
-            runDir("runs/client")
-        }
-        testmodClient {
-            client()
-            setConfigName("Fabric Testmod Client")
-            ideConfigGenerated(true)
-            runDir("runs/client")
-            source sourceSets.testmod
-        }
-        testmodDatagen {
-            inherit testmodClient
-            name "Fabric Test Datagen"
-            vmArg "-Dfabric-api.datagen"
-            vmArg "-Dfabric-api.datagen.output-dir=${file("src/generated")}"
-            vmArg "-Dfabric-api.datagen.modid=testmod"
-
-            runDir "build/datagen"
-        }
     }
 }
 
