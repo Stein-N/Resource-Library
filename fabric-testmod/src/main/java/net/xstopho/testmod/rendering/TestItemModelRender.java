@@ -8,6 +8,6 @@ import net.xstopho.testmod.registries.ItemRegistry;
 public class TestItemModelRender {
 
     public static void init() {
-        ItemModelRenderHelper.registerItemModel(ItemRegistry.TEST_RECIPE_REMAINDER.get(), new ResourceLocation("testmod", "in_hand/test_recipe_remainder"));
+        ItemModelRenderHelper.registerItemModel(ItemRegistry.SCYTHE_NETHERITE.get(), new ResourceLocation("testmod", "in_hand/scythe_netherite"));
     }
 }

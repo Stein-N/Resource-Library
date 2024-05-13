@@ -18,6 +18,8 @@ public class ItemGroupRegistry {
 //                        output.accept(ItemRegistry.test_pickaxe);
 //                        output.accept(ItemRegistry.test_shovel);
                         output.accept(ItemRegistry.TEST_RECIPE_REMAINDER.get());
+                        output.accept(ItemRegistry.SCYTHE_NETHERITE.get());
+                        output.accept(BlockRegistry.LAVA_SPRING.get());
 
                     }).build());
 

@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.xstopho.resourcelibrary.modifier.LootTableModifier;
 import net.xstopho.resourcelibrary.modifier.loot_tables.ChestLootTables;
 import net.xstopho.resourcelibrary.modifier.loot_tables.EntityLootTables;
+import net.xstopho.testmod.registries.BlockRegistry;
 import net.xstopho.testmod.registries.ItemGroupRegistry;
 import net.xstopho.testmod.registries.ItemRegistry;
 import net.xstopho.testmod.rendering.TestItemModelRender;
@@ -16,6 +17,7 @@ public class TestMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        BlockRegistry.init();
         ItemRegistry.init();
         ItemGroupRegistry.init();
 

@@ -2,15 +2,19 @@ package net.xstopho.resourcelibrary.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
+import net.minecraft.data.models.blockstates.*;
 import net.minecraft.data.models.model.ModelTemplate;
+import net.minecraft.data.models.model.ModelTemplates;
 import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.data.models.model.TextureSlot;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import java.util.Optional;
 
@@ -27,15 +31,13 @@ public abstract class ResourceModelProvider extends FabricModelProvider {
      */
     public void createFurnaceLikeBlock(BlockModelGenerators generator, Block block) {
         TextureMapping map = new TextureMapping();
-        Optional<ResourceLocation> parent = Optional.of(new ResourceLocation("block/orientable"));
 
-        map.put(TextureSlot.FRONT, getBlockKey(block));
+        map.put(TextureSlot.FRONT, modifyBlockKey(block, ""));
         map.put(TextureSlot.SIDE, modifyBlockKey(block, "_side"));
         map.put(TextureSlot.TOP, modifyBlockKey(block, "_top"));
 
-        ResourceLocation model = new ModelTemplate(parent, Optional.empty(), TextureSlot.FRONT, TextureSlot.SIDE, TextureSlot.TOP)
-                .create(block, map, generator.modelOutput);
-        generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, model));
+        ResourceLocation model = ModelTemplates.CUBE_ORIENTABLE.create(block, map, generator.modelOutput);
+        generator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block).with(createPropertyDispatch(model)));
     }
 
     /**
@@ -48,6 +50,21 @@ public abstract class ResourceModelProvider extends FabricModelProvider {
     public void createInHandItemModel(ItemModelGenerators generator, Item item, ResourceLocation parent) {
         new ModelTemplate(Optional.of(parent), Optional.empty(), TextureSlot.LAYER0)
                 .create(modifyItemKey(item), TextureMapping.layer0(modifyItemKey(item)), generator.output);
+    }
+
+    private PropertyDispatch createPropertyDispatch(ResourceLocation model) {
+        return PropertyDispatch.property(BlockStateProperties.HORIZONTAL_FACING)
+                .select(Direction.NORTH, Variant.variant()
+                        .with(VariantProperties.MODEL, model))
+                .select(Direction.EAST, Variant.variant()
+                        .with(VariantProperties.MODEL, model)
+                        .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
+                .select(Direction.SOUTH, Variant.variant()
+                        .with(VariantProperties.MODEL, model)
+                        .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
+                .select(Direction.WEST, Variant.variant()
+                        .with(VariantProperties.MODEL, model)
+                        .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270));
     }
 
     private ResourceLocation modifyBlockKey(Block block, String texturePosition) {

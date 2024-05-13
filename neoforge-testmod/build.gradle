@@ -18,7 +18,7 @@ repositories {
 dependencies {
     implementation "net.neoforged:neoforge:${neoforge_version}"
 
-    implementation "net.xstopho.resourcelibrary:resourcelibrary-neoforge:1.21-2.0.0-alpha"
+    implementation "net.xstopho.resourcelibrary:resourcelibrary-neoforge:${lib_version}"
 }
 
 runs {

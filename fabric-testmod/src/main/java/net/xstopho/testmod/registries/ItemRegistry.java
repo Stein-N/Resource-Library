@@ -11,13 +11,10 @@ import net.xstopho.testmod.items.*;
 
 public class ItemRegistry {
 
-    static final RegistryProvider<Item> ITEMS = RegistryProvider.get(Registries.ITEM, "testmod");
+    public static final RegistryProvider<Item> ITEMS = RegistryProvider.get(Registries.ITEM, "testmod");
 
     public static final RegistryObject<Item> TEST_RECIPE_REMAINDER = ITEMS.register("test_recipe_remainder", TestRecipeRemainder::new);
-
-    private static Item register(String id, Item item) {
-        return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation("testmod", id), item);
-    }
+    public static final RegistryObject<Item> SCYTHE_NETHERITE = ITEMS.register("scythe_netherite", () -> new Item(new Item.Properties()));
 
     public static void init() {}
 }
