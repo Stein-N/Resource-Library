@@ -10,14 +10,14 @@ license = "MIT"
     description = '''Test Mod Description'''
     logoFile = "icon_neoforge.png"
 
-[[dependencies.${mod_id}]]
+[[dependencies.testmod]]
     modId = "neoforge"
     required = true
     versionRange = "[20.6.62-beta,)"
     ordering = "NONE"
     side = "BOTH"
 
-[[dependencies.${mod_id}]]
+[[dependencies.testmod]]
     modId = "minecraft"
     required = true
     versionRange = "[1.20.6,)"

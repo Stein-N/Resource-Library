@@ -29,6 +29,6 @@ runs {
         systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
     }
     data {
-        programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        programArguments.addAll '--mod', "testmod", '--all', '--output', file('src/generated').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
     }
 }

@@ -21,7 +21,9 @@ public class ModelProv extends ResourceModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerators gen) {
+        ResourceLocation parentLocation = new ResourceLocation("testmod", "item/in_hand/handheld_large");
+
         gen.generateFlatItem(ItemRegistry.SCYTHE_NETHERITE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        createInHandItemModel(gen, ItemRegistry.SCYTHE_NETHERITE.get(), new ResourceLocation("testmod", "item/in_hand/handheld_large"));
+        createInHandItemModel(gen, ItemRegistry.SCYTHE_NETHERITE.get(), parentLocation);
     }
 }

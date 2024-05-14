@@ -35,9 +35,7 @@ public class FabricRegistryFactory implements RegistryProvider.Factory {
             this.modId = modId;
 
             final var reg = BuiltInRegistries.REGISTRY.get(key.location());
-            if (reg == null) {
-                throw new RuntimeException("Registry with name " + key.location() + " was not found!");
-            }
+            if (reg == null) throw new RuntimeException("Registry with name " + key.location() + " was not found!");
             registry = (Registry<T>) reg;
         }
 

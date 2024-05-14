@@ -25,9 +25,7 @@ public class NeoForgeRegistryFactory implements RegistryProvider.Factory {
             final var register = DeferredRegister.create(resourceKey, modId);
             register.register(Objects.requireNonNull(fmlModContainer.getEventBus()));
             return new Provider<>(register, modId);
-        } else {
-            throw new ClassCastException("The Container of the Mod " + modId + " is not a Forge one!");
-        }
+        } else throw new ClassCastException("The Container of the Mod " + modId + " is not a NeoForge one!");
     }
 
     private static class Provider<T> implements RegistryProvider<T> {
@@ -38,8 +36,8 @@ public class NeoForgeRegistryFactory implements RegistryProvider.Factory {
         private final Set<RegistryObject<T>> entriesView = Collections.unmodifiableSet(entries);
 
         private Provider(DeferredRegister<T> registry, String modId) {
-            this.modId = modId;
             this.registry = registry;
+            this.modId = modId;
         }
 
         @Override
