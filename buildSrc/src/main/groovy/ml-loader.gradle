@@ -23,10 +23,8 @@ tasks.named("sourcesJar", Jar) {
 
 tasks.withType(ProcessResources).configureEach() {
     from project(":common").sourceSets.main.resources
-    from file("src/generated")
 }
 
 processResources {
     from project(":common").sourceSets.main.resources
-    from file("src/generated")
 }
