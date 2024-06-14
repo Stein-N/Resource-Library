@@ -1,13 +1,17 @@
 package net.xstopho.resourcelibrary.test;
 
-import net.xstopho.resourcelibrary.test.block.TestBlocks;
-import net.xstopho.resourcelibrary.test.item.TestItems;
+import net.minecraft.resources.ResourceLocation;
+import net.xstopho.resourcelibrary.rendering.item.ItemModelRenderHelper;
 
 public class LibraryTest {
 
     public static void init() {
         TestBlocks.init();
         TestItems.init();
+        initRendering();
+    }
 
+    private static void initRendering() {
+        ItemModelRenderHelper.registerItemModel(TestItems.TEST_RECIPE_REMAINDER.get(), ResourceLocation.withDefaultNamespace("diamond"));
     }
 }

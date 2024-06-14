@@ -1,4 +1,4 @@
-package net.xstopho.resourcelibrary.test.item;
+package net.xstopho.resourcelibrary.test;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;

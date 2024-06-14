@@ -11,11 +11,13 @@ dependencies {
 }
 
 runs {
-    configureEach {
+    client {
+        systemProperty 'neoforge.enabledGameTestNamespaces', mod_id
         modSource project.sourceSets.main
     }
-    client {
-        systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
+    data {
+        programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated').getAbsolutePath(), '--existing', project(':common').file('src/main/resources/').getAbsolutePath()
+        modSource project.sourceSets.main
     }
 }
 

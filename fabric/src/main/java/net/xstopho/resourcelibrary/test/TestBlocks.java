@@ -1,4 +1,4 @@
-package net.xstopho.resourcelibrary.test.block;
+package net.xstopho.resourcelibrary.test;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.BlockItem;
@@ -9,7 +9,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.xstopho.resourcelibrary.LibConstants;
 import net.xstopho.resourcelibrary.registration.RegistryObject;
 import net.xstopho.resourcelibrary.registration.RegistryProvider;
-import net.xstopho.resourcelibrary.test.item.TestItems;
 
 import java.util.function.Supplier;
 
