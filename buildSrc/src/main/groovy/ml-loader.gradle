@@ -19,10 +19,12 @@ tasks.withType(Javadoc).configureEach {
 
 tasks.named("sourcesJar", Jar) {
     from(project(":common").sourceSets.main.allSource)
+    from file('src/generated')
 }
 
 tasks.withType(ProcessResources).configureEach() {
     from project(":common").sourceSets.main.resources
+    from file('src/generated')
 }
 
 processResources {

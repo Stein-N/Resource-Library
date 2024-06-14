@@ -5,6 +5,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FurnaceBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.xstopho.resourcelibrary.LibConstants;
 import net.xstopho.resourcelibrary.registration.RegistryObject;
@@ -16,7 +17,7 @@ public class TestBlocks {
 
     public static final RegistryProvider<Block> BLOCKS = RegistryProvider.get(BuiltInRegistries.BLOCK, LibConstants.MOD_ID);
 
-    public static final RegistryObject<Block> TEST_BLOCK = register("test_block");
+    public static final RegistryObject<Block> TEST_FURNACE_LIKE_BLOCK = register("test_furnace_like_block", () -> new FurnaceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FURNACE)));
 
     public static RegistryObject<Block> register(String id, Supplier<Block> block) {
         RegistryObject<Block> toReturn = BLOCKS.register(id, block);

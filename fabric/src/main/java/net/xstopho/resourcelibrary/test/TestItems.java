@@ -14,7 +14,8 @@ public class TestItems {
 
     public static final RegistryProvider<Item> ITEMS = RegistryProvider.get(BuiltInRegistries.ITEM, LibConstants.MOD_ID);
 
-    public static final RegistryObject<Item> TEST_RECIPE_REMAINDER = register("recipe_remainder", () -> new TestRecipeRemainingItem(new Item.Properties()));
+    public static final RegistryObject<Item> TEST_RECIPE_REMAINDER = register("test_recipe_remainder", () -> new TestRecipeRemainingItem(new Item.Properties()));
+    public static final RegistryObject<Item> TEST_IN_HAND_ITEM = register("test_in_hand_item");
 
     public static RegistryObject<Item> register(String id, Supplier<Item> item) {
         return ITEMS.register(id, item);

@@ -15,5 +15,7 @@ public class TestDatagen implements DataGeneratorEntrypoint {
         pack.addProvider(TestTagProv.EnchantmentTags::new);
         pack.addProvider(TestTagProv.BlockEntityTypeTags::new);
         pack.addProvider(TestTagProv.EntityTypeTags::new);
+
+        pack.addProvider(TestModelProv::new);
     }
 }
