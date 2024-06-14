@@ -15,6 +15,6 @@ public class ArchaeologyLootTables {
     public static final ResourceKey<LootTable> TRAIL_RUINS_RARE = createKey("trail_ruins_rare");
 
     private static ResourceKey<LootTable> createKey(String id) {
-        return ResourceKey.create(Registries.LOOT_TABLE, new ResourceLocation("archeology/" + id));
+        return ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.withDefaultNamespace("archeology/" + id));
     }
 }

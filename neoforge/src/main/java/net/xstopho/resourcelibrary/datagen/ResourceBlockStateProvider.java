@@ -19,7 +19,7 @@ public abstract class ResourceBlockStateProvider extends BlockStateProvider {
 
     private ResourceLocation modifyBlockKey(Block block, String texturePosition) {
         String[] parts = getBlockKey(block).toString().split(":");
-        return new ResourceLocation(parts[0], "block/" + parts[1] + texturePosition);
+        return ResourceLocation.fromNamespaceAndPath(parts[0], "block/" + parts[1] + texturePosition);
     }
 
     private ResourceLocation getBlockKey(Block block) {

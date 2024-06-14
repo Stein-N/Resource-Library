@@ -32,6 +32,6 @@ public class GameplayLootTables {
     public static final ResourceKey<LootTable> SNIFFER_DIGING = getLootTableId("sniffer_digging");
 
     private static ResourceKey<LootTable> getLootTableId(String id) {
-        return ResourceKey.create(Registries.LOOT_TABLE, new ResourceLocation("gameplay/" + id));
+        return ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.withDefaultNamespace("gameplay/" + id));
     }
 }

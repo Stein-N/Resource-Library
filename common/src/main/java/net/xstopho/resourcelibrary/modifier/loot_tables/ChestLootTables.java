@@ -53,6 +53,6 @@ public class ChestLootTables {
 
 
     private static ResourceKey<LootTable> createKey(String id) {
-        return ResourceKey.create(Registries.LOOT_TABLE, new ResourceLocation("chests/" + id));
+        return ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.withDefaultNamespace("chests/" + id));
     }
 }

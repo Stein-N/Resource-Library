@@ -10,6 +10,6 @@ public class ShearingLootTables {
     public static final ResourceKey<LootTable> BOGGED = createKey("bogged");
 
     private static ResourceKey<LootTable> createKey(String id) {
-        return ResourceKey.create(Registries.LOOT_TABLE, new ResourceLocation("shearing/" + id));
+        return ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.withDefaultNamespace("shearing/" + id));
     }
 }

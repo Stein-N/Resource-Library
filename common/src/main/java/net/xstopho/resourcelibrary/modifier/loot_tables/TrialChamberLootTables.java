@@ -39,6 +39,6 @@ public class TrialChamberLootTables {
     public static final ResourceKey<LootTable> SPAWNER_OMINOUS_KEY = createKey("spawners/ominous/trial_chambers/key");
 
     private static ResourceKey<LootTable> createKey(String id) {
-        return ResourceKey.create(Registries.LOOT_TABLE, new ResourceLocation(id));
+        return ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.withDefaultNamespace(id));
     }
 }

@@ -69,12 +69,12 @@ public abstract class ResourceModelProvider extends FabricModelProvider {
 
     private ResourceLocation modifyBlockKey(Block block, String texturePosition) {
         String[] parts = getBlockKey(block).toString().split(":");
-        return new ResourceLocation(parts[0], "block/" + parts[1] + texturePosition);
+        return ResourceLocation.fromNamespaceAndPath(parts[0], "block/" + parts[1] + texturePosition);
     }
 
     private ResourceLocation modifyItemKey(Item item) {
         String[] parts = getItemKey(item).toString().split(":");
-        return new ResourceLocation(parts[0], "item/in_hand/" + parts[1]);
+        return ResourceLocation.fromNamespaceAndPath(parts[0], "item/in_hand/" + parts[1]);
     }
 
     private ResourceLocation getBlockKey(Block block) {

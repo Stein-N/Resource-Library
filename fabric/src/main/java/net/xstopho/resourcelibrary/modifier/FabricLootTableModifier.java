@@ -2,7 +2,6 @@ package net.xstopho.resourcelibrary.modifier;
 
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.xstopho.resourcelibrary.registration.RegistryObject;

@@ -17,6 +17,6 @@ public class TagHelper {
     }
 
     static TagKey<Item> createTag(String prefix, String id) {
-        return TagKey.create(Registries.ITEM, new ResourceLocation(prefix, id));
+        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(prefix, id));
     }
 }

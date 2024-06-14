@@ -11,12 +11,12 @@ publishMods {
     else changelog = 'NO VALID CHANGELOG FILE FOUND!'
 
     modrinth {
-        accessToken = MODRINTH_KEY
+        accessToken = MODRINTH_API_KEY
         projectId = modrinth_id
         minecraftVersions.add("${minecraft_version}")
     }
     curseforge {
-        accessToken = CURSEFORGE_KEY
+        accessToken = CURSEFORGE_API_KEY
         projectId = curseforge_id
         minecraftVersions.add("${minecraft_version}")
 

@@ -47,7 +47,7 @@ public class FabricRegistryFactory implements RegistryProvider.Factory {
         @Override
         @SuppressWarnings("unchecked")
         public <I extends T> RegistryObject<I> register(String name, Supplier<? extends I> supplier) {
-            final var resourceLocation = new ResourceLocation(modId, name);
+            final var resourceLocation = ResourceLocation.fromNamespaceAndPath(modId, name);
             final var object = Registry.register(registry, resourceLocation, supplier.get());
             final var registryObject = new RegistryObject<I>() {
                 final ResourceKey<I> key = ResourceKey.create((ResourceKey<? extends Registry<I>>) registry.key(), resourceLocation);

@@ -21,7 +21,7 @@ public abstract class ResourceItemModelProvider extends ItemModelProvider {
 
     private ResourceLocation modifyItemKey(Item item) {
         String[] parts = getItemKey(item).toString().split(":");
-        return new ResourceLocation(parts[0], "item/in_hand/" + parts[1]);
+        return ResourceLocation.fromNamespaceAndPath(parts[0], "item/in_hand/" + parts[1]);
     }
 
     private ResourceLocation getItemKey(Item item) {

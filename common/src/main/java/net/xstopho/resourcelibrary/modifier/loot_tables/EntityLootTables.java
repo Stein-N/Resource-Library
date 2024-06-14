@@ -109,6 +109,6 @@ public class EntityLootTables {
     public static final ResourceKey<LootTable> ZOMBIFIED_PIGLIN = createKey("zombified_piglin");
 
     private static ResourceKey<LootTable> createKey(String id) {
-        return ResourceKey.create(Registries.LOOT_TABLE, new ResourceLocation("entities/" + id));
+        return ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.withDefaultNamespace("entities/" + id));
     }
 }
