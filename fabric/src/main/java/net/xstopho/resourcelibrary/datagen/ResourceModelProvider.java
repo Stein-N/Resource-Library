@@ -29,7 +29,7 @@ public abstract class ResourceModelProvider extends FabricModelProvider {
      * @param generator {@link BlockModelGenerators} passed down inside the Model Provider
      * @param block Your furnace like Block
      */
-    public void createFurnaceLikeBlock(BlockModelGenerators generator, Block block) {
+    public void createHorizontalBlock(BlockModelGenerators generator, Block block) {
         TextureMapping map = new TextureMapping();
 
         map.put(TextureSlot.FRONT, modifyBlockKey(block, ""));

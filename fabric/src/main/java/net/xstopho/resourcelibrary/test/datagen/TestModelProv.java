@@ -17,7 +17,7 @@ public class TestModelProv extends ResourceModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator) {
-        createFurnaceLikeBlock(blockStateModelGenerator, TestBlocks.TEST_FURNACE_LIKE_BLOCK.get());
+        createHorizontalBlock(blockStateModelGenerator, TestBlocks.TEST_FURNACE_LIKE_BLOCK.get());
     }
 
     @Override

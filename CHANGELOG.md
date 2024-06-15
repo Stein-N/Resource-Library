@@ -1,6 +1,7 @@
 #### v2.0.0
 - adding Model Render Helper
 - adding Block Model Generator Helper methods
+- expand TagHelper
 
 #### v1.3.1
 - removing testcode that gets executed sometimes

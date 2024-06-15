@@ -27,6 +27,7 @@ loom {
             programArgs('--username', 'Dev')
             runDir("runs/client")
         }
+
         datagen {
             inherit client
             name "Fabric Datagen"

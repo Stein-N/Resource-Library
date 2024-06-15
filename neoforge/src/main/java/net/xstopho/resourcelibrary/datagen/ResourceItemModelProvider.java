@@ -14,9 +14,16 @@ public abstract class ResourceItemModelProvider extends ItemModelProvider {
         super(output, modid, existingFileHelper);
     }
 
-    public ItemModelBuilder createInHandItem(Item item, ResourceLocation parent) {
-        return this.getBuilder(modifyItemKey(item).toString()).parent(new ModelFile.UncheckedModelFile(parent))
-                        .texture("layer0", modifyItemKey(item));
+    public void simpleItem(Item item) {
+        String[] parts = getItemKey(item).toString().split(":");
+        withExistingParent(getItemKey(item).getPath(), ResourceLocation.withDefaultNamespace("item/generated"))
+                .texture("layer0", ResourceLocation.fromNamespaceAndPath(parts[0], "item/" + parts[1]));
+    }
+
+    public void createInHandItem(Item item, ResourceLocation parent) {
+        this.getBuilder(modifyItemKey(item).toString())
+                .parent(new ModelFile.UncheckedModelFile(parent))
+                .texture("layer0", modifyItemKey(item));
     }
 
     private ResourceLocation modifyItemKey(Item item) {
